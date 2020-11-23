@@ -23,12 +23,12 @@ function drawOtherMouse(data) {
 }
 
 function preload(){
-  // put preload code here
 }
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
-  background("red");
+  background("black");
+
 }
 
 function draw() {
@@ -38,7 +38,7 @@ function draw() {
 function mouseMoved() {
   push();
   fill(myColor);
-  ellipse(mouseX, mouseY, 20);
+  ellipse(mouseX, mouseY, 5);
   pop();
   // create the message
   let message = {

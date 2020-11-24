@@ -1,0 +1,28 @@
+{
+  "name": "2020-05-veronicadvdt",
+  "version": "1.0.0",
+  "description": "node project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drawwithcode/2020-05-veronicadvdt.git"
+  },
+  "keywords": [
+    "ù"
+  ],
+  "author": "vero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drawwithcode/2020-05-veronicadvdt/issues"
+  },
+  "homepage": "https://github.com/drawwithcode/2020-05-veronicadvdt#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "save": "^2.4.0",
+    "socket.io": "^3.0.1"
+  }
+}

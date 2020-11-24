@@ -31,19 +31,30 @@ function preload(){
 
 }
 
+function toggleOtherErase() {
+  if (eraseEnable) {
+    noErase();
+    eraseEnable = data.false;
+  }
+  else {
+    erase();
+    eraseEnable = data.true;
+  }
+}
+
 
 function setup() {
   createCanvas(windowWidth,windowHeight)
   background("black");
+
   push();
   textSize(20);
   fill('black');
-
   toggleBtn = createButton("ERESE");
   toggleBtn.position(400, 210);
   toggleBtn.mouseClicked(toggleErase);
-
   pop();
+
   imageMode(CENTER);
   push();
   image(myImage1, width/2 , height/2, windowWidth, windowHeight);
@@ -59,7 +70,7 @@ function draw() {
 
   push();
   noStroke();
-  textFont("Roboto Mono");
+
   fill(myColor);
   textSize(66);
   textAlign(CENTER);

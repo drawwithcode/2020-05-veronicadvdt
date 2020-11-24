@@ -1,6 +1,7 @@
 
 let socket = io();
 let myColor = "white";
+let eraseEnable = false;
 
 
 socket.on("connect", newConnection);
@@ -26,7 +27,7 @@ function drawOtherMouse(data){
 
 function preload(){
   myImage1 = loadImage("./assets/settimana1.jpg");
-  myImage2 = loadImage("./assets/prova1.jpg");
+  myImage2 = loadImage("./assets/prova2.jpg");
 
 }
 
@@ -34,29 +35,47 @@ function preload(){
 function setup() {
   createCanvas(windowWidth,windowHeight)
   background("black");
+  push();
+  textSize(20);
+  fill('black');
+
+  toggleBtn = createButton("ERESE");
+  toggleBtn.position(400, 210);
+  toggleBtn.mouseClicked(toggleErase);
+
+  pop();
   imageMode(CENTER);
   push();
   image(myImage1, width/2 , height/2, windowWidth, windowHeight);
   filter("blur", 3);
   filter("gray");
   pop();
-  image(myImage2, width/2, height/2);
 
+  image(myImage2, width/2, 400);
 
 }
 
 function draw() {
-  rect(0, 40, width, 100);
-  fill("white");
-  stroke("black");
+
   push();
   noStroke();
   textFont("Roboto Mono");
   fill(myColor);
-  textSize(72);
+  textSize(66);
   textAlign(CENTER);
   text("LA SETTIMANA ENIGMISTICA 2.0", width/2, height/8);
   pop();
+}
+
+function toggleErase() {
+  if (eraseEnable) {
+    noErase();
+    eraseEnable = false;
+  }
+  else {
+    erase();
+    eraseEnable = true;
+  }
 }
 
 
